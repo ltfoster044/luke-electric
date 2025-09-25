@@ -1,103 +1,238 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Luke Electric</title>
-  <link rel="icon" href="logo.png" type="image/png">
+  <meta name="description" content="Trusted residential & commercial electrical services in Upstate NY." />
+  <link rel="icon" href="logo.png" type="image/png" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #000;
-      color: #fff;
+    :root{
+      --lime:#a3e635; --ink:#fff; --bg:#000; --ink-muted:#cbd5e1; --card:#0d0d0d;
+      --border:rgba(163,230,53,0.6);
     }
-    header {
-      background: #111;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 2px solid #a3e635;
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+
+    /* Nav */
+    .nav{position:sticky;top:0;z-index:50;background:#0b0b0b;backdrop-filter:blur(6px);border-bottom:2px solid var(--lime)}
+    .nav-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+    .logo{height:48px;width:auto;display:block}
+    @media(min-width:768px){ .logo{height:56px} }
+    .links{display:none;gap:18px}
+    @media(min-width:768px){ .links{display:flex} }
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:14px;font-weight:700;border:1px solid var(--lime)}
+    .btn.primary{background:var(--lime);color:#000}
+    .btn.ghost{background:transparent;color:var(--lime)}
+    .btn:hover{filter:brightness(1.05)}
+
+    /* Sections */
+    section{padding:60px 0}
+    .hero{padding:84px 0 60px;position:relative}
+    .hero:before{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(180deg, rgba(132,204,22,0.15), transparent 55%);
+      pointer-events:none
     }
-    header img {
-      height: 50px;
-    }
-    h1, h2 {
-      color: #a3e635;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-    footer {
-      background: #111;
-      padding: 20px;
-      text-align: center;
-      border-top: 2px solid #a3e635;
-      color: #a3e635;
-    }
-    .button {
-      background: #a3e635;
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+    h1,h2{color:var(--lime);margin:0 0 10px}
+    h1{font-size:clamp(28px,5vw,44px)}
+    h2{font-size:clamp(22px,3.2vw,30px)}
+    p{margin:0 0 12px}
+    .muted{color:var(--ink-muted)}
+
+    /* Cards/Grid */
+    .grid{display:grid;gap:18px}
+    @media(min-width:860px){ .grid-2{grid-template-columns:1fr 1fr} .grid-3{grid-template-columns:repeat(3,1fr)} }
+    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:var(--lime);color:#000;font-weight:700;font-size:12px}
+
+    /* Lists */
+    ul{margin:0;padding-left:18px;line-height:1.8}
+    .check li::marker{content:"✓ ";color:var(--lime);font-weight:800}
+
+    /* Footer */
+    footer{background:#0b0b0b;color:var(--lime);border-top:2px solid var(--lime);text-align:center;padding:22px 0}
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <img src="logo.png" alt="Luke Electric Logo">
-    <nav>
-      <a href="#services" class="button">Services</a>
-      <a href="#contact" class="button">Contact</a>
-    </nav>
-  </header>
 
-  <!-- Hero -->
-  <section>
-    <h1>Luke Electric</h1>
-    <p>Trusted Residential & Commercial Electrical Services in Upstate NY.</p>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container nav-row">
+      <a href="#home" class="logo-wrap"><img src="logo.png" alt="Luke Electric Logo" class="logo" /></a>
+      <div class="links">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="actions" style="display:flex;gap:10px">
+        <a class="btn ghost" href="#services">See Services</a>
+        <a class="btn primary" href="#contact">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="container">
+      <span class="pill">Local • Licensed &amp; Insured</span>
+      <h1>Trusted Residential &amp; Commercial Electrical Services</h1>
+      <p class="muted" style="font-size:18px">
+        Licensed electrician serving Upstate NY—panel upgrades, EV charger installs,
+        lighting design, troubleshooting, and new construction wiring.
+      </p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px">
+        <a class="btn primary" href="#contact">Get Started</a>
+        <a class="btn ghost" href="#services">See Services</a>
+      </div>
+    </div>
   </section>
 
-  <!-- About -->
+  <!-- SERVICES -->
+  <section id="services" style="background:#0f0f0f">
+    <div class="container">
+      <h2>Our Electrical Services</h2>
+      <p class="muted" style="margin-bottom:18px">From troubleshooting to full installations, we’ve got you covered.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <strong>Panel &amp; Service Upgrades</strong>
+          <p class="muted">100–200A upgrades, meter bases, surge protection, and code-compliant grounding.</p>
+        </div>
+        <div class="card">
+          <strong>EV Chargers &amp; Circuits</strong>
+          <p class="muted">Level 2 home chargers, dedicated appliance circuits, and subpanels.</p>
+        </div>
+        <div class="card">
+          <strong>Lighting &amp; Renovations</strong>
+          <p class="muted">Recessed lighting, smart switches, remodels, additions, and new construction rough-ins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
   <section id="about">
-    <h2>About Us</h2>
-    <p>
-      Luke Electric is <strong>owned and operated by Lucas Foster</strong>, a licensed & insured electrician
-      serving Livingston, NY and surrounding areas. We specialize in panel upgrades, EV charger installations,
-      lighting design, troubleshooting, and new construction wiring.
-    </p>
+    <div class="container">
+      <h2>Safe, code-first workmanship you can trust</h2>
+      <p class="muted">
+        Luke Electric is <strong style="color:var(--lime)">owned and operated by Lucas Foster</strong> — a licensed &amp; insured
+        electrician serving Upstate NY. We focus on clean, code-compliant installs and clear communication
+        from estimate to final inspection.
+      </p>
+      <ul class="check">
+        <li>Licensed &amp; insured electricians</li>
+        <li>Upfront, itemized estimates</li>
+        <li>Clean, on-time workmanship</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- Services -->
-  <section id="services">
-    <h2>Services</h2>
-    <ul>
-      <li>Panel & Service Upgrades</li>
-      <li>EV Chargers & Circuits</li>
-      <li>Lighting & Renovations</li>
-      <li>Troubleshooting & Repairs</li>
-      <li>New Construction Wiring</li>
-    </ul>
+  <!-- PRICING -->
+  <section id="pricing" style="background:#0f0f0f">
+    <div class="container">
+      <h2>Request a Free Quote</h2>
+      <p class="muted" style="margin-bottom:18px">We’ll provide upfront estimates tailored to your project.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <strong>Service Call</strong>
+          <p class="muted">Request a quote</p>
+          <ul class="muted" style="padding-left:18px;line-height:1.8">
+            <li>Diagnostic &amp; repair</li>
+            <li>Most minor fixes same day</li>
+            <li>Fully stocked van</li>
+          </ul>
+        </div>
+        <div class="card" style="border-color:var(--lime)">
+          <strong>Upgrade Package</strong> <span class="pill" style="margin-left:8px">Popular</span>
+          <p class="muted">Request a quote</p>
+          <ul class="muted" style="padding-left:18px;line-height:1.8">
+            <li>Panel/service upgrade</li>
+            <li>Permit &amp; inspection coordination</li>
+            <li>Surge protection included</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Custom Project</strong>
+          <p class="muted">Request a quote</p>
+          <ul class="muted" style="padding-left:18px;line-height:1.8">
+            <li>Remodels &amp; additions</li>
+            <li>New construction rough-in</li>
+            <li>Project manager support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Phone: <a href="tel:5187551836" style="color:#a3e635;">518-755-1836</a></p>
-    <p>Email: <a href="mailto:LukeElectricLLC@gmail.com" style="color:#a3e635;">LukeElectricLLC@gmail.com</a></p>
-    <p>Address: PO Box 137, Livingston, NY 12541</p>
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="container">
+      <h2>What clients say</h2>
+      <div class="grid grid-3">
+        <div class="card"><em>“Fast, clean, and everything works perfectly.”</em><br/><span class="muted">— Alex P., Homeowner</span></div>
+        <div class="card"><em>“Panel upgrade and lighting overhaul were flawless.”</em><br/><span class="muted">— Jordan K., Shop Owner</span></div>
+        <div class="card"><em>“Reliable partner on our remodels—on time, on budget.”</em><br/><span class="muted">— Casey R., GC</span></div>
+      </div>
+    </div>
   </section>
 
-  <!-- Footer -->
+  <!-- CONTACT -->
+  <section id="contact" style="background:#0f0f0f">
+    <div class="container grid grid-2" style="gap:22px">
+      <div class="card" style="background:#fff;color:#000">
+        <h2 style="color:#111">Get a Free Quote</h2>
+        <form method="POST" action="https://formsubmit.co/LukeElectricLLC@gmail.com" style="display:grid;gap:10px">
+          <!-- FormSubmit helpers -->
+          <input type="hidden" name="_subject" value="New lead from Luke Electric" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_autoresponse" value="Thanks for contacting Luke Electric! We'll get back to you shortly." />
+          <input type="hidden" name="_next" value="https://luke-electrical.com/#contact" />
+          <!-- Fields -->
+          <label>Name
+            <input name="name" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd">
+          </label>
+          <label>Email
+            <input name="email" type="email" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd">
+          </label>
+          <label>Phone
+            <input name="phone" style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd">
+          </label>
+          <label>Project details
+            <textarea name="message" rows="5" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd"></textarea>
+          </label>
+          <!-- honeypot -->
+          <input type="text" name="_honey" style="display:none">
+          <button class="btn" style="background:var(--lime);color:#000;border-color:var(--lime)">Send Message</button>
+        </form>
+        <p class="muted" style="margin-top:8px">No backend needed.</p>
+      </div>
+
+      <div class="card">
+        <h2>Contact</h2>
+        <p><strong>Phone:</strong> <a href="tel:15187551836" style="color:var(--lime)">518-755-1836</a></p>
+        <p><strong>Email:</strong> <a href="mailto:LukeElectricLLC@gmail.com" style="color:var(--lime)">LukeElectricLLC@gmail.com</a></p>
+        <p><strong>Mailing:</strong> PO Box 137, Livingston, NY 12541</p>
+        <div style="display:flex;gap:10px;margin-top:10px">
+          <a class="btn ghost" href="#">Facebook</a>
+          <a class="btn ghost" href="#">Instagram</a>
+          <a class="btn ghost" href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    © 2025 Luke Electric LLC • Owned & operated by Lucas Foster
+    © <span id="y"></span> Luke Electric LLC • Owned &amp; operated by Lucas Foster • All rights reserved.
   </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
 </body>
 </html>
+
 
