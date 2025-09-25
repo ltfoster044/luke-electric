@@ -1,78 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Luke Electric</title>
-  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="icon" href="logo.png" type="image/png">
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #a3e635; /* lime green */
-      text-align: center;
+      margin: 0;
+      background: #000;
+      color: #fff;
     }
     header {
       background: #111;
-      padding: 1rem;
-      border-bottom: 2px solid #a3e635;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      border-bottom: 2px solid #a3e635;
     }
     header img {
       height: 50px;
     }
-    nav a {
+    h1, h2 {
       color: #a3e635;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
     }
     section {
-      padding: 3rem 1rem;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
     }
     footer {
-      border-top: 2px solid #a3e635;
-      padding: 1rem;
       background: #111;
+      padding: 20px;
+      text-align: center;
+      border-top: 2px solid #a3e635;
       color: #a3e635;
+    }
+    .button {
+      background: #a3e635;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <img src="logo.png" alt="Luke Electric Logo" />
+    <img src="logo.png" alt="Luke Electric Logo">
     <nav>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
+      <a href="#services" class="button">Services</a>
+      <a href="#contact" class="button">Contact</a>
     </nav>
   </header>
 
-  <section id="home">
+  <!-- Hero -->
+  <section>
     <h1>Luke Electric</h1>
-    <p>Trusted Residential & Commercial Electrical Services in Upstate NY</p>
+    <p>Trusted Residential & Commercial Electrical Services in Upstate NY.</p>
   </section>
 
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      Luke Electric is <strong>owned and operated by Lucas Foster</strong>, a licensed & insured electrician
+      serving Livingston, NY and surrounding areas. We specialize in panel upgrades, EV charger installations,
+      lighting design, troubleshooting, and new construction wiring.
+    </p>
+  </section>
+
+  <!-- Services -->
   <section id="services">
-    <h2>Our Services</h2>
-    <ul style="list-style: none; padding: 0;">
-      <li>⚡ Panel & Service Upgrades</li>
-      <li>⚡ EV Charger Installation</li>
-      <li>⚡ Lighting & Renovations</li>
+    <h2>Services</h2>
+    <ul>
+      <li>Panel & Service Upgrades</li>
+      <li>EV Chargers & Circuits</li>
+      <li>Lighting & Renovations</li>
+      <li>Troubleshooting & Repairs</li>
+      <li>New Construction Wiring</li>
     </ul>
   </section>
 
+  <!-- Contact -->
   <section id="contact">
-    <h2>Contact Us</h2>
-    <p>📍 PO Box 137, Livingston, NY 12541</p>
-    <p>📞 518-755-1836</p>
-    <p>📧 <a href="mailto:LukeElectricLLC@gmail.com" style="color:#a3e635;">LukeElectricLLC@gmail.com</a></p>
+    <h2>Contact</h2>
+    <p>Phone: <a href="tel:5187551836" style="color:#a3e635;">518-755-1836</a></p>
+    <p>Email: <a href="mailto:LukeElectricLLC@gmail.com" style="color:#a3e635;">LukeElectricLLC@gmail.com</a></p>
+    <p>Address: PO Box 137, Livingston, NY 12541</p>
   </section>
 
+  <!-- Footer -->
   <footer>
-    © <script>document.write(new Date().getFullYear())</script> Luke Electric LLC. All rights reserved.
+    © 2025 Luke Electric LLC • Owned & operated by Lucas Foster
   </footer>
 </body>
 </html>
+
