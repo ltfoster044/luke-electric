@@ -86,7 +86,10 @@
       color: black;
     }
 
-    /* Services */
+    /* SAFETY: Hide any images if still inside hero */
+    .hero img { display: none !important; }
+
+    /* Sections */
     .section {
       padding: 4rem 2rem;
     }
@@ -132,9 +135,6 @@
     }
     .about ul li {
       margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
     }
 
     /* Contact */
@@ -183,8 +183,8 @@
       <span class="hero-badge">Local • Licensed & Insured</span>
       <h1>Trusted Residential & Commercial Electrical Services</h1>
       <p>
-        Licensed electrician serving Upstate NY—panel upgrades, EV charger installs, lighting design, troubleshooting, 
-        and new construction wiring.
+        Licensed electrician serving Upstate NY—panel upgrades, EV charger installs,
+        lighting design, troubleshooting, and new construction wiring.
       </p>
       <div class="hero-buttons">
         <a href="#contact" class="btn">Get Started</a>
@@ -245,3 +245,4 @@
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
