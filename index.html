@@ -36,58 +36,42 @@
 
     /* Hero Section */
     .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
       padding: 60px 20px;
       background: linear-gradient(to bottom, #111, #000);
+      text-align: center;
     }
 
-    .hero-logo {
-      width: 100%;
-      max-width: 500px; /* desktop size */
-      display: block;
-      margin: 0 auto;
-    }
-
-    .hero-text h1 {
+    .hero h1 {
       color: #a3e635;
       font-size: 2.5rem;
       margin-bottom: 16px;
     }
-    .hero-text p {
+    .hero p {
       color: #d1d5db;
       font-size: 1.1rem;
       margin-bottom: 24px;
     }
-    .hero-text .btn {
+    .hero .btn {
       display: inline-block;
       padding: 12px 20px;
-      margin-right: 12px;
+      margin: 6px;
       background: #a3e635;
       color: black;
       font-weight: bold;
       text-decoration: none;
       border-radius: 6px;
     }
-
-    /* Mobile */
-    @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .hero-logo {
-        max-width: 250px; /* shrink on mobile */
-      }
+    .hero .btn-outline {
+      background: transparent;
+      border: 2px solid #a3e635;
+      color: #a3e635;
     }
   </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav>
-    <img src="logo.png" alt="Luke Electric Logo (Top Nav)" />
+    <img src="logo.png" alt="Luke Electric Logo" />
     <div class="links">
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
@@ -96,18 +80,14 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div>
-      <img src="hero-logo.png?v=5" alt="Luke Electric Main Hero Logo" class="hero-logo" />
-    </div>
-    <div class="hero-text">
-      <span style="display:inline-block; background:#a3e635; color:black; padding:4px 10px; border-radius:12px; font-size:0.85rem; font-weight:bold;">
-        Local • Licensed & Insured
-      </span>
-      <h1>Trusted Residential & Commercial Electrical Services</h1>
-      <p>Licensed electrician serving Upstate NY—panel upgrades, EV charger installs, lighting design, troubleshooting, and new construction wiring.</p>
-      <a href="#contact" class="btn">Get Started</a>
-      <a href="#services" class="btn" style="background:transparent; border:2px solid #a3e635; color:#a3e635;">See Services</a>
-    </div>
+    <span style="display:inline-block; background:#a3e635; color:black; padding:4px 10px; border-radius:12px; font-size:0.85rem; font-weight:bold;">
+      Local • Licensed & Insured
+    </span>
+    <h1>Trusted Residential & Commercial Electrical Services</h1>
+    <p>Licensed electrician serving Upstate NY—panel upgrades, EV charger installs, lighting design, troubleshooting, and new construction wiring.</p>
+    <a href="#contact" class="btn">Get Started</a>
+    <a href="#services" class="btn btn-outline">See Services</a>
   </section>
 </body>
 </html>
+
