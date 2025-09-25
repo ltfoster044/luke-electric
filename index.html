@@ -15,7 +15,7 @@
       justify-content: space-between;
       padding: 0.5rem 2rem;
     }
-    .navbar img {
+    .navbar img.site-logo {
       height: 48px;
       width: auto;
     }
@@ -24,9 +24,7 @@
       color: #a3e635;
       font-weight: 600;
     }
-    .navbar .links a:hover {
-      text-decoration: underline;
-    }
+    .navbar .links a:hover { text-decoration: underline; }
 
     /* Hero Section */
     .hero {
@@ -37,139 +35,61 @@
       align-items: center;
       justify-content: flex-start;
     }
-    .hero-content {
-      max-width: 650px;
-      text-align: left;
-    }
+    .hero-content { max-width: 650px; text-align: left; }
     .hero-badge {
-      display: inline-block;
-      background: #a3e635;
-      color: black;
-      padding: 4px 10px;
-      border-radius: 12px;
-      font-size: 0.85rem;
-      font-weight: bold;
+      display: inline-block; background: #a3e635; color: black;
+      padding: 4px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: bold;
       margin-bottom: 1rem;
     }
-    .hero h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      color: #ccc;
-      margin-bottom: 1.5rem;
-    }
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-    }
-    .btn {
-      background: #a3e635;
-      color: black;
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    .btn:hover {
-      background: #84cc16;
-    }
-    .btn-outline {
-      border: 2px solid #a3e635;
-      background: transparent;
-      color: #a3e635;
-    }
-    .btn-outline:hover {
-      background: #a3e635;
-      color: black;
-    }
+    .hero h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+    .hero p { font-size: 1.1rem; color: #ccc; margin-bottom: 1.5rem; }
+    .hero-buttons { display: flex; gap: 1rem; }
+    .btn { background: #a3e635; color: black; padding: 0.6rem 1.2rem; border-radius: 8px; font-weight: bold; }
+    .btn:hover { background: #84cc16; }
+    .btn.btn-outline { border: 2px solid #a3e635; background: transparent; color: #a3e635; }
+    .btn.btn-outline:hover { background: #a3e635; color: black; }
 
-    /* SAFETY: Hide any images if still inside hero */
-    .hero img { display: none !important; }
+    /* SAFETY: hide/remove any hero images, no matter what */
+    .hero img,
+    img[alt*="Hero"],
+    img[src*="hero-logo"] {
+      display: none !important;
+      visibility: hidden !important;
+      width: 0 !important;
+      height: 0 !important;
+      overflow: hidden !important;
+    }
+    /* Also ensure no background-image slips in */
+    .hero { background-image: linear-gradient(to right, #000000, #111111) !important; }
 
     /* Sections */
-    .section {
-      padding: 4rem 2rem;
-    }
+    .section { padding: 4rem 2rem; }
     .section h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 2rem;
-      text-align: center;
-      color: #a3e635;
+      font-size: 2rem; font-weight: 800; margin-bottom: 2rem; text-align: center; color: #a3e635;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      border: 2px solid #a3e635;
-      border-radius: 12px;
-      padding: 1.5rem;
-      background: white;
-      color: black;
-    }
-    .card h3 {
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    .card { border: 2px solid #a3e635; border-radius: 12px; padding: 1.5rem; background: white; color: black; }
+    .card h3 { font-weight: 700; margin-bottom: 0.5rem; }
 
     /* About */
-    .about {
-      background: black;
-      color: white;
-      padding: 4rem 2rem;
-    }
-    .about h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      color: #a3e635;
-    }
-    .about ul {
-      list-style: none;
-      padding: 0;
-    }
-    .about ul li {
-      margin-bottom: 0.75rem;
-    }
+    .about { background: black; color: white; padding: 4rem 2rem; }
+    .about h2 { font-size: 2rem; font-weight: 800; margin-bottom: 1.5rem; color: #a3e635; }
+    .about ul { list-style: none; padding: 0; }
+    .about ul li { margin-bottom: 0.75rem; }
 
     /* Contact */
-    .contact {
-      background: black;
-      color: white;
-      padding: 4rem 2rem;
-    }
-    .contact h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      color: #a3e635;
-      text-align: center;
-    }
-    .contact-info {
-      text-align: center;
-      margin-top: 1rem;
-      font-size: 1.1rem;
-    }
+    .contact { background: black; color: white; padding: 4rem 2rem; }
+    .contact h2 { font-size: 2rem; font-weight: 800; margin-bottom: 1.5rem; color: #a3e635; text-align: center; }
+    .contact-info { text-align: center; margin-top: 1rem; font-size: 1.1rem; }
 
     /* Footer */
-    footer {
-      background: black;
-      border-top: 2px solid #a3e635;
-      color: #a3e635;
-      text-align: center;
-      padding: 1rem;
-    }
+    footer { background: black; border-top: 2px solid #a3e635; color: #a3e635; text-align: center; padding: 1rem; }
   </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar">
-    <img src="logo.png" alt="Luke Electric Logo">
+    <img src="logo.png?v=nav" alt="Luke Electric Logo" class="site-logo">
     <div class="links">
       <a href="#services">Services</a>
       <a href="#about">About</a>
@@ -177,7 +97,7 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (NO IMG) -->
   <section class="hero">
     <div class="hero-content">
       <span class="hero-badge">Local • Licensed & Insured</span>
@@ -242,7 +162,12 @@
     © <span id="y"></span> Luke Electric LLC. All rights reserved.
   </footer>
 
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  <script>
+    // Force-remove any legacy hero images if they exist in cached markup
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.hero img, img[alt*="Hero"], img[src*="hero-logo"]').forEach(el => el.remove());
+      document.getElementById('y').textContent = new Date().getFullYear();
+    });
+  </script>
 </body>
 </html>
-
