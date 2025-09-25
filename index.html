@@ -15,15 +15,8 @@
       justify-content: space-between;
       padding: 0.5rem 2rem;
     }
-    .navbar img.site-logo {
-      height: 48px;
-      width: auto;
-    }
-    .navbar .links a {
-      margin-left: 1rem;
-      color: #a3e635;
-      font-weight: 600;
-    }
+    .navbar img.site-logo { height: 48px; width: auto; }
+    .navbar .links a { margin-left: 1rem; color: #a3e635; font-weight: 600; }
     .navbar .links a:hover { text-decoration: underline; }
 
     /* Hero Section */
@@ -38,8 +31,7 @@
     .hero-content { max-width: 650px; text-align: left; }
     .hero-badge {
       display: inline-block; background: #a3e635; color: black;
-      padding: 4px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: bold;
-      margin-bottom: 1rem;
+      padding: 4px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: bold; margin-bottom: 1rem;
     }
     .hero h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
     .hero p { font-size: 1.1rem; color: #ccc; margin-bottom: 1.5rem; }
@@ -53,20 +45,13 @@
     .hero img,
     img[alt*="Hero"],
     img[src*="hero-logo"] {
-      display: none !important;
-      visibility: hidden !important;
-      width: 0 !important;
-      height: 0 !important;
-      overflow: hidden !important;
+      display: none !important; visibility: hidden !important; width: 0 !important; height: 0 !important; overflow: hidden !important;
     }
-    /* Also ensure no background-image slips in */
     .hero { background-image: linear-gradient(to right, #000000, #111111) !important; }
 
     /* Sections */
     .section { padding: 4rem 2rem; }
-    .section h2 {
-      font-size: 2rem; font-weight: 800; margin-bottom: 2rem; text-align: center; color: #a3e635;
-    }
+    .section h2 { font-size: 2rem; font-weight: 800; margin-bottom: 2rem; text-align: center; color: #a3e635; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
     .card { border: 2px solid #a3e635; border-radius: 12px; padding: 1.5rem; background: white; color: black; }
     .card h3 { font-weight: 700; margin-bottom: 0.5rem; }
@@ -79,8 +64,29 @@
 
     /* Contact */
     .contact { background: black; color: white; padding: 4rem 2rem; }
-    .contact h2 { font-size: 2rem; font-weight: 800; margin-bottom: 1.5rem; color: #a3e635; text-align: center; }
-    .contact-info { text-align: center; margin-top: 1rem; font-size: 1.1rem; }
+    .contact h2 { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; color: #a3e635; text-align: center; }
+    .contact-wrap { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    @media (min-width: 900px){ .contact-wrap { grid-template-columns: 1.1fr .9fr; } }
+    .contact-card { background: white; color: black; border: 2px solid #a3e635; border-radius: 12px; padding: 1.25rem; }
+    .contact-info { border: 2px solid #a3e635; border-radius: 12px; padding: 1.25rem; }
+
+    .input, .textarea {
+      width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 10px; font-size: 1rem;
+    }
+    .textarea { min-height: 110px; resize: vertical; }
+
+    .alert {
+      display: none;
+      background: #16a34a; /* green-600 */
+      color: white;
+      border: 2px solid #22c55e; /* green-500 */
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin: 0 auto 14px auto;
+      max-width: 900px;
+      text-align: center;
+      font-weight: 600;
+    }
 
     /* Footer */
     footer { background: black; border-top: 2px solid #a3e635; color: #a3e635; text-align: center; padding: 1rem; }
@@ -97,15 +103,13 @@
     </div>
   </nav>
 
-  <!-- Hero Section (NO IMG) -->
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
       <span class="hero-badge">Local • Licensed & Insured</span>
       <h1>Trusted Residential & Commercial Electrical Services</h1>
-      <p>
-        Licensed electrician serving Upstate NY—panel upgrades, EV charger installs,
-        lighting design, troubleshooting, and new construction wiring.
-      </p>
+      <p>Licensed electrician serving Upstate NY—panel upgrades, EV charger installs,
+        lighting design, troubleshooting, and new construction wiring.</p>
       <div class="hero-buttons">
         <a href="#contact" class="btn">Get Started</a>
         <a href="#services" class="btn btn-outline">See Services</a>
@@ -146,15 +150,70 @@
     </ul>
   </section>
 
-  <!-- Contact -->
+  <!-- Contact (Quote Request Form) -->
   <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p class="contact-info">
-      Lucas Foster <br>
-      Phone: 518-755-1836 <br>
-      Email: LukeElectricLLC@gmail.com <br>
-      PO Box 137, Livingston, NY 12541
-    </p>
+    <h2>Request a Free Quote</h2>
+
+    <!-- Success banner (auto-shown when ?success=1) -->
+    <div id="contact-success" class="alert">Thanks! We received your request and will reach out shortly.</div>
+
+    <div class="contact-wrap">
+      <!-- Form: sends directly to your email with no CAPTCHA for customers -->
+      <form class="contact-card" method="POST" action="https://formsubmit.co/lukeelectricllc@gmail.com">
+        <!-- FormSubmit settings -->
+        <input type="hidden" name="_subject" value="New Quote Request — Luke Electric" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" /> <!-- disables verification for users -->
+        <input type="hidden" name="_autoresponse" value="Thanks for contacting Luke Electric! We received your request and will reach out shortly." />
+        <!-- Redirect back to your site with success flag -->
+        <input type="hidden" name="_next" value="https://luke-electrical.com/?success=1#contact" />
+        <!-- Honeypot for spam -->
+        <input type="text" name="_honey" style="display:none" />
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div>
+            <label for="name" style="font-weight:600;">Name</label>
+            <input id="name" name="name" class="input" required />
+          </div>
+          <div>
+            <label for="email" style="font-weight:600;">Email</label>
+            <input id="email" name="email" type="email" class="input" required />
+          </div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <label for="phone" style="font-weight:600;">Phone</label>
+          <input id="phone" name="phone" class="input" placeholder="Optional" />
+        </div>
+
+        <div style="margin-top:12px;">
+          <label for="address" style="font-weight:600;">Service Address</label>
+          <input id="address" name="address" class="input" placeholder="Street, City, ZIP (optional)" />
+        </div>
+
+        <div style="margin-top:12px;">
+          <label for="message" style="font-weight:600;">Project Details</label>
+          <textarea id="message" name="message" class="textarea" required placeholder="Tell us about your project (e.g., panel upgrade, EV charger, lighting)..."></textarea>
+        </div>
+
+        <button class="btn" type="submit" style="margin-top:14px; width:100%;">Send Request</button>
+
+        <p style="font-size:.85rem; color:#4b5563; margin-top:10px;">
+          By submitting, you agree to be contacted by Luke Electric about your project.
+        </p>
+      </form>
+
+      <!-- Your direct contact card -->
+      <div class="contact-info">
+        <div class="contact-card" style="background:black; color:white; border-color:#a3e635;">
+          <h3 style="color:#a3e635; font-weight:800; font-size:1.25rem; margin-bottom:.75rem;">Contact</h3>
+          <p><strong>Lucas Foster</strong></p>
+          <p>Phone: <a href="tel:15187551836" style="color:#a3e635;">518-755-1836</a></p>
+          <p>Email: <a href="mailto:lukeelectricllc@gmail.com" style="color:#a3e635;">lukeelectricllc@gmail.com</a></p>
+          <p>PO Box 137, Livingston, NY 12541</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -163,11 +222,15 @@
   </footer>
 
   <script>
-    // Force-remove any legacy hero images if they exist in cached markup
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.hero img, img[alt*="Hero"], img[src*="hero-logo"]').forEach(el => el.remove());
-      document.getElementById('y').textContent = new Date().getFullYear();
-    });
+    // Year
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Show success banner if redirected with ?success=1
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('success') === '1') {
+      const ok = document.getElementById('contact-success');
+      if (ok) ok.style.display = 'block';
+    }
   </script>
 </body>
 </html>
