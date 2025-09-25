@@ -2,108 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Luke Electric</title>
   <meta name="description" content="Trusted residential & commercial electrical services in Upstate NY." />
   <link rel="icon" href="logo.png" type="image/png" />
   <style>
     :root { --lime:#a3e635; --bg:#000; --text:#fff; --muted:#d1d5db; }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:0 16px}
-    header{position:sticky;top:0;z-index:20;background:#0b0b0b;border-bottom:1px solid var(--lime)}
-    .row{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
-    .logo{display:flex;align-items:center;gap:10px}
-    .logo img{height:44px;width:auto;border-radius:6px}
-    .nav a{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;font-weight:700;border:1px solid var(--lime);margin-left:8px}
-    .nav a.primary{background:var(--lime);color:#000}
-    .hero{padding:64px 0;border-bottom:1px solid var(--lime)}
-    h1{margin:0 0 8px 0;color:var(--lime);font-size:38px}
-    p.large{color:#cbd5e1;font-size:18px;margin:0}
-    section{padding:56px 0}
-    h2{color:var(--lime);margin:0 0 14px 0}
-    .muted{color:var(--muted)}
-    .grid{display:grid;gap:18px}
-    @media(min-width:860px){.grid-2{grid-template-columns:1fr 1fr}.grid-3{grid-template-columns:repeat(3,1fr)}}
-    .card{background:#0b0b0b;border:1px solid var(--lime);border-radius:16px;padding:18px}
-    footer{background:#0b0b0b;border-top:1px solid var(--lime);color:var(--lime);padding:24px 0}
-    ul.clean{margin:0;padding-left:18px;line-height:1.9}
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; background:var(--bg); color:var(--text); }
+    a { color:inherit; text-decoration:none; }
+    .nav { position:sticky; top:0; background:#111; border-bottom:2px solid var(--lime); }
+    .container { max-width:1100px; margin:0 auto; padding:0 16px; }
+    .row { display:flex; align-items:center; justify-content:space-between; padding:12px 0; }
+    .logo { display:flex; align-items:center; gap:10px; }
+    .logo img { height:34px; width:auto; display:block; }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:14px; font-weight:600; border:1px solid var(--lime); }
+    .btn.primary { background:var(--lime); color:#000; border-color:var(--lime); }
+    .btn.outline { color:var(--lime); background:transparent; }
+    .hero { background:#000; color:#fff; padding:70px 0; border-bottom:1px solid var(--lime);}
+    .hero h1 { color:var(--lime); font-size:38px; margin:16px 0 10px; }
+    .muted { color:var(--muted); }
+    .grid { display:grid; gap:18px; }
+    @media(min-width:860px){ .grid-2 { grid-template-columns:1fr 1fr; } .grid-3 { grid-template-columns:repeat(3,1fr);} }
+    .card { border:1px solid var(--lime); border-radius:18px; background:#111; padding:18px; }
+    .card.light { background:#fff; color:#111; }
+    .section { padding:60px 0; }
+    .section.lime { background:#f7ffe6; color:#111; }
+    .section.dark { background:#000; color:#fff; }
+    ul { margin:0; padding-left:18px; line-height:1.9; }
+    footer { background:#111; color:var(--lime); border-top:1px solid var(--lime); padding:28px 0; }
+    input, textarea { width:100%; padding:12px; border-radius:12px; border:1px solid #d1d5db; font:inherit; }
+    label { font-size:14px; color:#374151; }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
+  <!-- NAV -->
+  <div class="nav">
     <div class="container">
       <div class="row">
-        <a href="#home" class="logo">
+        <a class="logo" href="#home" aria-label="Luke Electric">
           <img src="logo.png" alt="Luke Electric logo" />
         </a>
-        <nav class="nav">
-          <a href="#services">Services</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#about">About</a>
-          <a href="#contact" class="primary">Get a Quote</a>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="container grid grid-2" style="align-items:center;gap:28px">
-      <div>
-        <div class="muted" style="margin-bottom:6px">Local • Licensed & Insured</div>
-        <h1>Trusted Residential & Commercial Electrical Services</h1>
-        <p class="large">Serving Upstate NY—panel upgrades, EV chargers, lighting, troubleshooting, and new construction.</p>
-        <div style="margin-top:18px;display:flex;gap:10px">
-          <a class="nav primary" href="#contact" style="border:0">Get Started</a>
-          <a class="nav" href="#services">See Services</a>
+        <div class="row" style="gap:10px">
+          <a class="btn outline" href="#services">Services</a>
+          <a class="btn outline" href="#pricing">Pricing</a>
+          <a class="btn outline" href="#about">About</a>
+          <a class="btn primary" href="#contact">Get a Quote</a>
         </div>
       </div>
-      <div class="card" style="text-align:center">
-        <img src="logo.png" alt="Luke Electric" style="height:120px;width:auto" />
-        <div class="muted" style="margin-top:6px">Luke Electric</div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container grid grid-2" style="align-items:center; gap:28px;">
+      <div>
+        <div class="btn" style="border-color:transparent; background:#1a1a1a; color:var(--lime)">Local • Licensed & Insured</div>
+        <h1>Trusted Residential & Commercial Electrical Services</h1>
+        <p class="muted">Serving Upstate NY—panel upgrades, EV chargers, lighting, troubleshooting, and new construction.</p>
+        <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" href="#contact">Get Started</a>
+          <a class="btn outline" href="#services">See Services</a>
+        </div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <img src="logo.png" alt="Luke Electric logo" style="height:100px; width:auto; display:block; margin:0 auto 8px;" />
+        <div class="muted">Luke Electric</div>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
-  <section id="services">
+  <!-- ABOUT -->
+  <section class="section dark" id="about">
     <div class="container">
-      <h2>Our Electrical Services</h2>
-      <p class="muted" style="margin-bottom:18px">From troubleshooting to full installations, we’ve got you covered.</p>
-      <div class="grid grid-3">
-        <div class="card"><strong>Panel & Service Upgrades</strong><br /><span class="muted">100–200A upgrades, meter bases, surge protection, grounding.</span></div>
-        <div class="card"><strong>EV Chargers & Circuits</strong><br /><span class="muted">Level 2 chargers, dedicated circuits, subpanels.</span></div>
-        <div class="card"><strong>Lighting & Renovations</strong><br /><span class="muted">Recessed lighting, smart switches, remodels & new construction.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing -->
-  <section id="pricing">
-    <div class="container">
-      <h2>Request a Free Quote</h2>
-      <div class="grid grid-3">
-        <div class="card"><strong>Service Call</strong><br /><span class="muted">Diagnostic & repair • Most minor fixes same day</span></div>
-        <div class="card" style="border-width:2px"><strong>Upgrade Package</strong> <span style="color:#22c55e;font-weight:800">(Popular)</span><br /><span class="muted">Panel/service upgrade • Permits & inspection • Surge protection</span></div>
-        <div class="card"><strong>Custom Project</strong><br /><span class="muted">Remodels & additions • New construction rough-in</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about">
-    <div class="container">
-      <h2>About Luke Electric</h2>
-      <p class="muted">
-        Luke Electric is <strong style="color:#a3e635">owned and operated by Lucas Foster</strong> — a licensed & insured electrician serving
-        Livingston, NY and surrounding areas. We focus on clean, code-compliant installs and clear communication from estimate to inspection.
-      </p>
-      <ul class="clean">
-        <li>Licensed & insured</li>
+      <h2 style="color:var(--lime); margin:0 0 16px 0;">About</h2>
+      <p class="muted">Luke Electric is <strong style="color:var(--lime)">owned and operated by Lucas Foster</strong>, a licensed & insured electrician serving Livingston, NY and surrounding areas. We focus on clean, code-compliant installs and clear communication from estimate to final inspection.</p>
+      <ul>
+        <li>Licensed & insured electricians</li>
         <li>Upfront, itemized estimates</li>
         <li>Clean, on-time workmanship</li>
         <li>1-year workmanship warranty</li>
@@ -111,48 +87,72 @@
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container grid grid-2" style="gap:22px">
-      <div class="card">
-        <h2 style="margin-top:0">Get a free quote</h2>
+  <!-- SERVICES -->
+  <section class="section lime" id="services">
+    <div class="container">
+      <h2 style="color:#365314; margin:0 0 16px 0;">Our Electrical Services</h2>
+      <p class="muted" style="margin:0 0 22px 0;">From troubleshooting to full installations, we’ve got you covered.</p>
+      <div class="grid grid-3">
+        <div class="card light"><strong>Panel & Service Upgrades</strong><br><span class="muted">100–200A upgrades, meter bases, surge protection, and grounding.</span></div>
+        <div class="card light"><strong>EV Chargers & Circuits</strong><br><span class="muted">Level 2 home chargers, dedicated circuits, and subpanels.</span></div>
+        <div class="card light"><strong>Lighting & Renovations</strong><br><span class="muted">Recessed lighting, smart switches, remodels & new construction.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <h2 style="color:#a3e635; margin:0 0 16px 0;">Request a Free Quote</h2>
+      <div class="grid grid-3">
+        <div class="card light"><strong>Service Call</strong><br><span class="muted">Diagnostic & repair • Most minor fixes same day • Fully stocked van</span></div>
+        <div class="card light" style="border-width:2px;"><strong>Upgrade Package</strong> <span style="color:#16a34a;font-weight:700;">(Popular)</span><br><span class="muted">Service/panel upgrade • Permits & inspection • Surge protection</span></div>
+        <div class="card light"><strong>Custom Project</strong><br><span class="muted">Remodels & additions • New construction rough-in • PM support</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container grid grid-2" style="gap:24px;">
+      <div class="card light">
+        <h3 style="margin-top:0;">Get a free quote</h3>
         <form method="POST" action="https://formsubmit.co/LukeElectricLLC@gmail.com">
           <input type="hidden" name="_subject" value="New lead from Luke Electric" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_autoresponse" value="Thanks for contacting Luke Electric! We'll get back to you shortly." />
           <input type="hidden" name="_next" value="https://luke-electrical.com/#contact" />
-          <div style="display:grid;gap:10px">
+          <div style="display:grid; gap:10px;">
             <label>Name <input name="name" required /></label>
             <label>Email <input type="email" name="email" required /></label>
             <label>Phone <input name="phone" /></label>
             <label>Project details <textarea name="message" rows="5" required></textarea></label>
-            <button type="submit" class="nav primary" style="border:0">Send Message</button>
+            <button class="btn primary" type="submit">Send Message</button>
           </div>
         </form>
       </div>
-      <div class="card">
-        <h2 style="margin-top:0">Contact</h2>
-        <p><strong>Phone:</strong> <a href="tel:15187551836" style="color:var(--lime)">518-755-1836</a></p>
-        <p><strong>Email:</strong> <a href="mailto:LukeElectricLLC@gmail.com" style="color:var(--lime)">LukeElectricLLC@gmail.com</a></p>
+      <div class="card light">
+        <h3 style="margin-top:0;">Contact</h3>
+        <p><strong>Phone:</strong> <a href="tel:15187551836">518-755-1836</a></p>
+        <p><strong>Email:</strong> <a href="mailto:LukeElectricLLC@gmail.com">LukeElectricLLC@gmail.com</a></p>
         <p><strong>Mailing:</strong> PO Box 137, Livingston, NY 12541</p>
-        <p class="muted">Owner: Lucas Foster</p>
+        <p><strong>Owner:</strong> Lucas Foster</p>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
       <div>© <span id="y"></span> Luke Electric LLC • Owned & operated by Lucas Foster</div>
-      <div style="display:flex;gap:16px">
+      <div style="display:flex; gap:16px;">
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
       </div>
     </div>
   </footer>
   <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
-
 </body>
 </html>
+
 
