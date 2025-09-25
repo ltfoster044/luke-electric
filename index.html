@@ -30,7 +30,7 @@
 
     /* Sections */
     section{padding:60px 0}
-    .hero{padding:84px 0 60px;position:relative}
+    .hero{padding:84px 0 60px;position:relative;text-align:center}
     .hero:before{
       content:"";position:absolute;inset:0;
       background:linear-gradient(180deg, rgba(132,204,22,0.15), transparent 55%);
@@ -66,7 +66,6 @@
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
         <a href="#about">About</a>
-        <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="actions" style="display:flex;gap:10px">
@@ -79,13 +78,14 @@
   <!-- HERO -->
   <section id="home" class="hero">
     <div class="container">
+      <img src="logo.png" alt="Luke Electric Logo" style="max-width:200px;margin:0 auto 20px;display:block" />
       <span class="pill">Local • Licensed &amp; Insured</span>
       <h1>Trusted Residential &amp; Commercial Electrical Services</h1>
       <p class="muted" style="font-size:18px">
         Licensed electrician serving Upstate NY—panel upgrades, EV charger installs,
         lighting design, troubleshooting, and new construction wiring.
       </p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px">
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:14px">
         <a class="btn primary" href="#contact">Get Started</a>
         <a class="btn ghost" href="#services">See Services</a>
       </div>
@@ -168,31 +168,17 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section id="testimonials">
-    <div class="container">
-      <h2>What clients say</h2>
-      <div class="grid grid-3">
-        <div class="card"><em>“Fast, clean, and everything works perfectly.”</em><br/><span class="muted">— Alex P., Homeowner</span></div>
-        <div class="card"><em>“Panel upgrade and lighting overhaul were flawless.”</em><br/><span class="muted">— Jordan K., Shop Owner</span></div>
-        <div class="card"><em>“Reliable partner on our remodels—on time, on budget.”</em><br/><span class="muted">— Casey R., GC</span></div>
-      </div>
-    </div>
-  </section>
-
   <!-- CONTACT -->
   <section id="contact" style="background:#0f0f0f">
     <div class="container grid grid-2" style="gap:22px">
       <div class="card" style="background:#fff;color:#000">
         <h2 style="color:#111">Get a Free Quote</h2>
         <form method="POST" action="https://formsubmit.co/LukeElectricLLC@gmail.com" style="display:grid;gap:10px">
-          <!-- FormSubmit helpers -->
           <input type="hidden" name="_subject" value="New lead from Luke Electric" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_autoresponse" value="Thanks for contacting Luke Electric! We'll get back to you shortly." />
           <input type="hidden" name="_next" value="https://luke-electrical.com/#contact" />
-          <!-- Fields -->
           <label>Name
             <input name="name" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd">
           </label>
@@ -205,11 +191,9 @@
           <label>Project details
             <textarea name="message" rows="5" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd"></textarea>
           </label>
-          <!-- honeypot -->
           <input type="text" name="_honey" style="display:none">
           <button class="btn" style="background:var(--lime);color:#000;border-color:var(--lime)">Send Message</button>
         </form>
-        <p class="muted" style="margin-top:8px">No backend needed.</p>
       </div>
 
       <div class="card">
@@ -217,11 +201,6 @@
         <p><strong>Phone:</strong> <a href="tel:15187551836" style="color:var(--lime)">518-755-1836</a></p>
         <p><strong>Email:</strong> <a href="mailto:LukeElectricLLC@gmail.com" style="color:var(--lime)">LukeElectricLLC@gmail.com</a></p>
         <p><strong>Mailing:</strong> PO Box 137, Livingston, NY 12541</p>
-        <div style="display:flex;gap:10px;margin-top:10px">
-          <a class="btn ghost" href="#">Facebook</a>
-          <a class="btn ghost" href="#">Instagram</a>
-          <a class="btn ghost" href="#">LinkedIn</a>
-        </div>
       </div>
     </div>
   </section>
